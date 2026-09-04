@@ -1,0 +1,584 @@
+/**
+= - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -
+/    Inspired by emilkowal.ski                                    /
+/                                                                 /
+/                                     CSS by @WalterMitchell      /
+/                                                                 /
+/    Take code with credit                                        /
+/                                                                 /
+/                                                 styles.css      /
+= - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -
+**/
+
+/** import font open sans **/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+   --username: "WalterMitchell"; /** change this to your username **/
+   --font: "Open Sans", sans-serif;
+   --main: #171717;
+   --second: #63635e;
+   --third: #dedfe0;
+   --fourth: rgb(244, 244, 244);
+}
+
+/**
+====================================
+1. GENERAL SETUP AND FORMATTING
+====================================
+**/
+body {
+   overflow-x: hidden;
+}
+#page-wrapper:not(.aops-icon) {
+   font-family: var(--font) !important;
+}
+#page-wrapper {
+   z-index: -1;
+}
+#wrapper a{
+   color: var(--second) !important;
+}
+#wrapper a:not([data-blog], .username-coloured, .username-colored){
+   text-decoration: underline !important;
+}
+#wrapper {
+   background: transparent !important;
+   border: none !important;
+}
+h2, .message {
+   color: var(--second) !important;
+}
+fieldset {
+   border: none !important;
+}
+#wrapper {
+   width: 61.8%; /** width percentage roughly equal to 1/golden ratio **/
+}
+#main{
+   width: 60% !important;
+}
+#side {
+   background: white !important;
+   padding: 15px !important;
+   margin-top: 15px !important;
+   margin-bottom: 15px !important;
+   width: 35% !important;
+   border-left: 1px solid var(--third);
+}
+.aops-scroll-inner {
+   scrollbar-width: none;
+   &::-webkit-scrollbar {
+     display: none;
+   }
+}
+/**
+====================================
+2. HEADER AND NAVBOX
+====================================
+**/
+
+/** header styles **/
+#header {
+   text-align: left !important;
+   background: transparent !important;
+   border: none !important;
+   line-height: 1.6;
+   padding: 15px !important;
+   height: 15% !important;
+   overflow-y: hidden;
+   margin-top: 10% !important;
+   pointer-events: none !important;
+}
+#header h1 {
+   color: var(--main) !important;
+   text-align: inherit !important;
+   width: fit-content;
+   font-size: 15px !important;
+   pointer-events: auto;
+   height: 30px !important;
+}
+#header h1:hover {
+   text-decoration: none !important;
+}
+#header h1::after{
+   content: "\A" var(--username);
+   white-space: pre-wrap;
+   color: var(--second) !important;
+   height: 30px !important;
+   pointer-events: none !important;
+}
+
+/** navbox styles **/
+#navigation_box {
+   padding: 15px !important;
+   margin-top: -5px!important;
+   padding-bottom: 10px !important;
+   height: auto !important;
+   background: white !important;
+   position: sticky !important;
+  z-index: 10000;
+   border-bottom: 1px solid var(--third) !important;
+}
+#right_navigation_box {
+   margin-right: 15px !important;
+}
+#left_navigation_box {
+   display: none !important;
+}
+#navigation_box a {
+   color: var(--second)!important;
+}
+/** tooltip code mostly stolen from stackoverflow.com/questions/25214632/how-can-i-create-custom-tooltips-with-css-pseudoelements **/
+#blog-subscribe::before {
+   content: "i";
+}
+.blog-logout::before {
+   content: "O"
+}
+.blog-info::before {
+  content: "3";
+}
+#blog-subscribe::before, .blog-logout::before, .blog-info::before{
+   font-family: "AoPS" !important;
+   font-size: 15px !important;
+}
+#blog-subscribe::before, .blog-logout::before, .blog-info::before, #blog-subscribe::after, .blog-logout::after, .blog-info::after{
+   transition: all 0.2s ease-out;
+}
+#blog-subscribe, .blog-logout, .blog-info{
+   position: relative;
+   font-size: 0px !important;
+   width: 15px !important;
+   height: 10px !important;
+   margin-left: 3px !important;
+}
+#blog-subscribe::after, .blog-logout::after, .blog-info::after{
+   position: absolute;
+   left: 50%;
+   opacity: 0;
+}
+#blog-subscribe::after {
+  content: "Subscribe";
+}
+.blog-logout::after {
+   content: "Logout";
+}
+.blog-info::after {
+   content: "Blog Info";
+}
+#blog-subscribe::after, .blog-logout::after, .blog-info::after {
+    filter: invert(1);
+    color: var(--second);
+    top: 45px;
+    z-index: 100000;
+    padding: 5px;
+    font-size: 12px;
+    left: -125% !important;
+    background-color: var(--main);
+    border-radius: 4px;
+    transform: translate3d(0, -100%, 0);
+    pointer-events: none;
+    white-space: nowrap;
+}
+#blog-subscribe:hover::after, .blog-logout:hover::after, .blog-info:hover::after{
+   opacity: 1;
+}
+#blog-subscribe:hover::before, .blog-logout:hover::before, .blog-info:hover::before{
+   opacity: 0.8;
+}
+/**
+====================================
+3. ENTRIES AND COMMENTS
+====================================
+**/
+
+/** entry styles **/
+.entry {
+   background: var(--background)!important;
+   border: none !important;
+}
+.entry h2{
+   font-size: 0px !important;
+}
+.entry h2 a {
+   font-size: 14px !important;
+}
+.entry h2 strong {
+   color: var(--third)!important;
+   font-weight: 100 !important;
+}
+.entry h2 .username-coloured {
+   margin-left: 5px !important;
+}
+.username-coloured, .username-colored {
+   text-decoration: none !important;
+}
+.entrywrap {
+   background: var(--background)!important;
+   border: none !important;
+}
+img[src='/m/community/img/blogs/hyperion/icon_post_target.gif'] {
+  width: 0px !important;
+}
+h2 a[data-blog] {
+   display: block !important;
+   position:absolute;
+   width: 100% !important;
+   margin-top: -25px !important;
+   height: 25px !important;
+}
+#main:not(:has(.blog-post-comment)):has(div:not(.blog-posts-box) ~ div:not(.blog-posts-box)) > div > .entry h2 a[data-blog] {
+  height: 125px !important;
+  z-index: 5000000;
+}
+h2 a[data-blog]::before {
+   content: "";
+   z-index: 50000;
+   margin-left: -25px;
+   position: absolute !important;
+   width: 25px !important;
+   opacity: 0;
+   transition: 0.3s;
+   height: 25px !important;
+  background-image: url('https://www.freeiconspng.com/uploads/link-icon-png-14.png');
+  background-repeat: no-repeat;
+  background-position: 75% 40%;
+  background-size: cover;
+}
+h2 a[data-blog]:hover::before {
+   opacity: 0.5;
+}
+.blog-num-comments {
+   display: none !important;
+}
+/** this gets styles of full blog post with comments **/
+#main:has(.blog-post-comment) > div > .entry {
+   height: auto !important;
+}
+#main:has(.blog-post-comment) > div > .entrywrap > div {
+   height: auto !important;
+   display: block !important;
+}
+/** get styles of blog post without comment section (main page) **/
+div.entry {
+   margin-bottom: 25px !important;
+   border-radius: 10px;
+   transition: 0.2s ease-out;
+   padding: 15px !important;
+}
+div .entrywrap {
+   padding: 0px !important;
+   margin: 0px !important;
+   overflow-y: hidden;
+   display: block ;
+}
+div .entrywrap .efooter .actions, .modactions{
+   position: block;
+   z-index: 50000;
+}
+div .entrywrap . efooter .actions {
+   width: 100% !important;
+}
+#main:not(:has(.blog-post-comment)) > div .entrywrap>:not(.message):not(.cmty-post-poll) {
+   display: none;
+}
+#main:not(:has(.blog-post-comment))  > div .entry:hover {
+   background: var(--fourth) !important;
+}
+#main:not(:has(.blog-post-comment)) > div .entrywrap{
+   height: 80px !important;
+}
+#main:not(:has(.blog-post-comment)) > div .entrywrap > .cmty-post-poll .cmty-poll-display > :not(.cmty-poll-question){
+   display: none;
+}
+#main:not(:has(.blog-post-comment)) > div .entrywrap > .cmty-post-poll .cmty-poll-display > .cmty-poll-question{
+   padding: 5px !important;
+}
+div.entrywrap > .cmty-post-poll .cmty-poll-display {
+   background: transparent !important;
+   border: 1px dashed var(--third) !important;
+   border-radius: 8px;
+}
+#page-wrapper .btn {
+   color: var(--third) !important;
+   background: transparent !important;
+   border: 2px solid var(--third) !important;
+   border-radius: 5px;
+   transition: 0.2s;
+}
+#page-wrapper .btn:focus {
+   box-shadow: none !important;
+   outline: none !important;
+}
+#page-wrapper .btn:active {
+   transform: scale(0.97);
+}
+/** comment styling **/
+.comment {
+   border: none !important;
+   padding: 15px !important;
+   background: transparent !important;
+   border-radius: 10px;
+   transition: 0.2s ease-out;
+}
+.comment:hover {
+   background: var(--fourth) !important;
+}
+/** comment ui **/
+#page-wrapper .cmty-posting-button-row, .aops-modal-body .cmty-posting-button-row {
+	background: transparent !important;
+}
+#page-wrapper .cmty-bbcode-buttons > .cmty-bbcode-btn, .aops-modal-body .cmty-bbcode-buttons > .cmty-bbcode-btn {
+  transition: 0.2s;
+}
+#page-wrapper .cmty-bbcode-other, .aops-modal-body .cmty-bbcode-other {
+  filter: invert(1);
+  opacity: 0.3;
+}
+#page-wrapper .cmty-bbcode-other:hover, .aops-modal-body .cmty-bbcode-other:hover {
+  opacity: 0.2;
+}
+#page-wrapper .cmty-posting-preview-bar, .aops-modal-body .cmty-posting-preview-bar {
+  background: color-mix(in oklab, var(--second), white 60%) !important;
+}
+#page-wrapper .cmty-posting-box-container .cmty-post-textarea, .aops-modal-body .cmty-posting-box-container .cmty-post-textarea {
+  border: color-mix(in oklab, var(--second), white 60%) solid 1px !important;
+}
+#page-wrapper .cmty-post-preview, .aops-modal-body .cmty-post-preview {
+  border: 1px solid color-mix(in oklab, var(--second), white 60%) !important;
+}
+#page-wrapper .cmty-reply-window .cmty-cancel-posting-x, .aops-modal-body .cmty-reply-window .cmty-cancel-posting-x {
+   filter: invert(1);
+  opacity: 0.3;
+}
+
+/**
+====================================
+4. BBCODE RENDERING
+====================================
+**/
+
+/** tooltip rendering **/
+#page-wrapper .cmty-tip-header {
+  text-decoration: underline dashed;
+  text-decoration-color: color-mix(in oklab, var(--second), white 60%);
+  text-decoration-thickness: 0.5px;
+  transition: 0.2s;
+  background: none !important;
+  color: var(--second)!important;
+  text-underline-offset: 0.4em;
+}
+#page-wrapper .cmty-tip-header:hover {
+  text-decoration-color: var(--second);
+}
+#page-wrapper .cmty-tip-triangle{
+    border-bottom: 12px solid var(--third) !important;
+}
+#page-wrapper .cmty-tip-content{
+  background: var(--third) !important;
+  color: white !important;
+}
+/** hide tag rendering **/
+#page-wrapper .cmty-hide-content{
+  background: white!important;
+  border: 1px solid var(--third);
+  border-radius: 10px!important;
+}
+#page-wrapper .cmty-hide-content::before{
+  border: 1px solid var(--third)!important;
+  background: white !important;
+  color: var(--third) !important;
+  border-radius: 50% !important;
+  content:"h" !important;
+  font-size: 10pt !important;
+  margin-top: -7px;
+  margin-left: 0px;
+  font-family: "AoPS";
+}
+#page-wrapper .cmty-hide-content::after{
+  display: none;
+}
+#page-wrapper .cmty-hide-heading {
+  background: white !important;
+  border: 1px solid var(--third) !important;
+  color: var(--second)!important;
+  /*
+  margin-top: 2px !important;*/
+  display: inline-block !important;
+}
+/** quote rendering **/
+#page-wrapper .bbcode_quote{
+  background: white !important;
+  border: 1px solid var(--third);
+  border-radius: 10px!important;
+}
+#page-wrapper .bbcode_quote::before{
+  border: 1px solid var(--third)!important;
+  background: white !important;
+  color: var(--third) !important;
+  border-radius: 50% !important;
+  content:"z" !important;
+  font-size: 10pt !important;
+  margin-top: -7px;
+  margin-left: 0px;
+  font-family: "AoPS";
+}
+#page-wrapper .bbcode_quote::after{
+  display: none;
+}
+.bbcode_quote_head{
+  background: transparent !important;
+}
+/** code snippet styles **/
+
+#page-wrapper pre[class*="language-"] {
+  background: transparent !important;
+  padding: 10px !important;
+  border: 2px solid var(--third)!important;
+}
+#page-wrapper code[class*="language-"] {
+  padding: 0em !important;
+}
+
+/** tags **/
+#page-wrapper .cmty-item-tag {
+   border-radius: 0px !important;
+  background: transparent !important;
+  color: var(--third)!important;
+}
+
+#page-wrapper .cmty-itembox-inner-box > a[data-blog]:not(:nth-child(1)) > .cmty-item-tag, #page-wrapper .cmty-itembox > a[data-blog]:not(:nth-child(1)) > .cmty-item-tag {
+   border-left: 1px solid var(--third);
+  padding-left: 15px !important;
+}
+
+/**
+====================================
+5. SIDEBAR
+====================================
+**/
+
+textarea#message {
+   width: 97% !important;
+  resize: none !important;
+}
+#page-wrapper .aops-scroll-content, .blog-shout {
+   width: 100%!important;
+}
+.widget-content a { opacity: 0.9; }
+.widget-content a:hover { opacity: 1; }
+.widget-settings { display: none !important; }
+
+/** blog shouts **/
+.blog-shout {
+   background: transparent !important;
+  padding: 3px !important;
+  transition: 0.3s;
+}
+.blog-shout:hover {
+   background: var(--fourth) !important;
+}
+.blog-shout > p:has(span) {
+  color: color-mix(in oklab, var(--second), white 50%) !important;
+}
+
+/** search widget **/
+form#blog_searchform > fieldset  > div > input {
+   width: 100%;
+  background: transparent;
+  border: 2px solid var(--third);
+  color: var(--third);
+  padding: 5px !important;
+}
+
+input#blog_keywords {
+  padding: 5px !important;
+}
+div#search-widget {
+  width: 100%!important;
+}
+#search-widget > div {
+  width: 100%!important;
+}
+
+/** Misc. other snippets **/
+div.aops-modal-content-wrapper {
+   z-index: 500000000000000000;
+}
+.aops-modal-mask {
+   z-index: 5000000;
+}
+.cmty-posting-forum-name {
+  background: var(--third) !important;
+}
+
+.aops-modal-body .cmty-posting-top {
+  background: var(--second) !important;
+}
+.aops-modal-frame {
+  border: none !important;
+  box-shadow: none !important;
+}
+.aops-modal-footer, .aops-modal-title {
+  border-top: 1px solid var(--fourth) !important;
+  background: none !important;
+}
+.aops-modal-footer > button, .aops-modal-body > button {
+  background: white !important;
+  border: 1px solid var(--third) !important;
+  color: var(--third) !important;
+}
+
+.aops-modal-footer > button:focus {
+  outline: none !important;
+}
+/* Fluid archives by HappyCupcake*/
+.archive-month-topics {
+    display: block;
+    height: auto;
+}
+
+.archive-row {
+    transition: transform .2s .1s, height .2s;
+    height: 20px;
+    padding: 0 0 0 30px;
+    margin-left: 16px;
+}
+
+.archive-month-collapsed .archive-row {
+    transition: transform .2s, height .1s .1s;
+    transform: scaleY(0);
+    height: 0;
+}
+
+/** archive image **/
+.month-image{
+  background: white !important;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/45/45206.png) !important;
+  background-size: 100% !important;
+  padding-left: 18px;
+  width: 18px;
+  transition: 0.6s;
+  transform: scale(0.5) rotate(180deg);
+  height: 18px;
+}
+.month-image::before{
+  content: "+" !important;
+  font-family: monospace !important;
+  color: var(--third) !important;
+  height: 16px!important;
+  width: 16px!important;
+  z-index: 50000;
+  position: relative;
+  display: block !important;
+}
+
+.month-image[alt='-']{
+  background: white!important;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/45/45206.png) !important;
+  background-size: 100% !important;
+  transform: scale(0.5) rotate(630deg);
+}
+input[type='checkbox'] {
+   accent-color: var(--third) !important;
+}
