@@ -1,4 +1,4 @@
-/**
+]/**
 = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -
 /    Inspired by emilkowal.ski                                    /
 /                                                                 /
@@ -9,6 +9,10 @@
 /                                                 styles.css      /
 = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -
 **/
+
+/** DO NOT REMOVE THESE HEADINGS **/
+/** style.css by WalterMitchell **/
+/** Support thread: https://artofproblemsolving.com/community/c66h3897661_release_stylecss **/
 
 /** import font open sans **/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -581,4 +585,12 @@ div.aops-modal-content-wrapper {
 }
 input[type='checkbox'] {
    accent-color: var(--third) !important;
+}
+/**final credit**/
+#main::after{
+   content:"made with ♥ ⋅ style.css ⋅ WalterMitchell";
+  width: 100%;
+  text-align: center;
+  color: var(--third);
+  display: block !important;
 }
