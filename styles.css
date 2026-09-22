@@ -244,7 +244,7 @@ h2 a[data-blog]::before {
    opacity: 0;
    transition: 0.3s;
    height: 25px !important;
-  background-image: url('https://www.freeiconspng.com/uploads/link-icon-png-14.png');
+  background-image: url('https://i.ibb.co/cKq2Z46c/links-icon-9892.png');
   background-repeat: no-repeat;
   background-position: 75% 40%;
   background-size: cover;
@@ -330,7 +330,7 @@ div.entrywrap > .cmty-post-poll .cmty-poll-display {
 }
 /** comment ui **/
 #page-wrapper .cmty-posting-button-row, .aops-modal-body .cmty-posting-button-row {
-	background: transparent !important;
+    background: transparent !important;
 }
 #page-wrapper .cmty-bbcode-buttons > .cmty-bbcode-btn, .aops-modal-body .cmty-bbcode-buttons > .cmty-bbcode-btn {
   transition: 0.2s;
@@ -558,7 +558,7 @@ div.aops-modal-content-wrapper {
 /** archive image **/
 .month-image{
   background: white !important;
-  background-image: url(https://cdn-icons-png.flaticon.com/512/45/45206.png) !important;
+  background-image: url(https://i.ibb.co/84nvcW2n/45206.png) !important;
   background-size: 100% !important;
   padding-left: 18px;
   width: 18px;
@@ -579,7 +579,7 @@ div.aops-modal-content-wrapper {
 
 .month-image[alt='-']{
   background: white!important;
-  background-image: url(https://cdn-icons-png.flaticon.com/512/45/45206.png) !important;
+  background-image: url(https://i.ibb.co/84nvcW2n/45206.png) !important;
   background-size: 100% !important;
   transform: scale(0.5) rotate(630deg);
 }
@@ -594,3 +594,4 @@ input[type='checkbox'] {
   color: var(--third);
   display: block !important;
 }
+
