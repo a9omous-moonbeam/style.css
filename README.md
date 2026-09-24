@@ -1,4 +1,4 @@
 # style.css
-Minimalist blog stylesheet for the AoPS blog environment
+Minimalist blog stylesheet for the AoPS blog environment.
 
-Inspired from [emilkowal.ski](emilkowal.ski). Use code with in-code credit.
+Inspired from [emilkowal.ski](emilkowal.ski). Use code with in-code credit and footer credit.
